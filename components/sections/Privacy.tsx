@@ -17,6 +17,12 @@ export function Privacy() {
           <h2 className="max-w-[14ch] text-4xl font-semibold leading-[1.06] tracking-[-0.03em] md:text-[3.25rem]">
             Tes données restent sur ton iPhone.
           </h2>
+          <a
+            href="/confidentialite"
+            className="mt-8 inline-block text-[17px] text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent"
+          >
+            Lire la politique de confidentialité
+          </a>
         </Reveal>
         <ul className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-6">
           {FACTS.map(({ Icon, title, body }, i) => (

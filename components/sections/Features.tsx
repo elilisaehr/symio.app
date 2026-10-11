@@ -62,16 +62,17 @@ export function Features() {
         </Reveal>
 
         <Reveal className="lg:col-span-12">
-          <article className="grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[var(--radius-card)] bg-accent px-8 pt-10 text-accent-ink md:grid-cols-2 md:px-12 md:pt-12">
-            <div className="md:pb-6">
+          <article className="grid grid-cols-1 items-center gap-12 rounded-[var(--radius-card)] bg-accent px-8 py-12 text-accent-ink md:grid-cols-12 md:px-12 md:py-16">
+            <div className="md:col-span-5">
               <h3 className="text-3xl font-semibold tracking-[-0.025em] md:text-4xl">Clair ou sombre, comme ton iPhone.</h3>
               <p className="mt-4 max-w-[36ch] text-[17px] leading-relaxed opacity-85">
                 Symio suit le réglage de ton téléphone, pour rester doux à regarder, même tard le soir.
               </p>
             </div>
-            <div className="mx-auto flex w-full max-w-[460px] translate-y-6 justify-center gap-4 md:gap-6">
-              <Phone force="light" name="01-accueil" alt="Accueil de Symio en mode clair." sizes="(min-width: 768px) 16vw, 40vw" className="w-1/2" />
-              <Phone force="dark" name="01-accueil" alt="Accueil de Symio en mode sombre." sizes="(min-width: 768px) 16vw, 40vw" className="mt-12 w-1/2" />
+            {/* Both devices shown whole: the second sits lower, and the panel padding leaves room for it. */}
+            <div className="mx-auto grid w-full max-w-[460px] grid-cols-2 items-start gap-4 sm:gap-6 md:col-span-7 md:max-w-[480px]">
+              <Phone force="light" name="01-accueil" alt="Accueil de Symio en mode clair." sizes="(min-width: 768px) 220px, 42vw" />
+              <Phone force="dark" name="01-accueil" alt="Accueil de Symio en mode sombre." sizes="(min-width: 768px) 220px, 42vw" className="mt-10 md:mt-14" />
             </div>
           </article>
         </Reveal>

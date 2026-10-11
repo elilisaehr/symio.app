@@ -1,6 +1,11 @@
 // TODO: remplacer par le lien App Store définitif de Symio.
 export const APP_STORE_URL = "https://apps.apple.com/fr/app/symio";
 
+export const CONTACT_EMAIL = "support@symio.ch";
+
+// TODO: adresse postale (rue, NPA, ville). Laissée vide dans la politique Termly ("__________").
+export const POSTAL_ADDRESS = "";
+
 export const CTA_LABEL = "Télécharger sur l’App Store";
 
 // Photos générées (Higgsfield). À télécharger dans /public/photos puis
