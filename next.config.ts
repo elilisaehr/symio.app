@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
+// Static export for Infomaniak: `npm run build` writes the whole site to out/,
+// to upload as-is to the web root. No Node server is needed.
 const nextConfig: NextConfig = {
-  // symio.ch/privacy is the address named in the privacy policy.
-  async redirects() {
-    return [{ source: "/privacy", destination: "/confidentialite", permanent: true }];
-  },
-  images: {
-    remotePatterns: [{ protocol: "https", hostname: "d8j0ntlcm91z4.cloudfront.net" }],
-  },
+  output: "export",
+  // Every page becomes a folder with an index.html (e.g. /confidentialite/), which any web server serves.
+  trailingSlash: true,
+  // No image server on static hosting: images are pre-compressed in public/.
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

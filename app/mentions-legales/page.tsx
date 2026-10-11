@@ -4,17 +4,18 @@ import { HOST, PUBLISHER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Éditeur, hébergement et informations légales du site Symio.",
-  alternates: { canonical: "/mentions-legales" },
+  description: "Éditeur, hébergement et informations légales du site symio.ch.",
+  alternates: { canonical: "/mentions-legales/" },
 };
 
 const TOC = [
   { id: "editeur", label: "Éditeur" },
-  { id: "hebergement", label: "Hébergement" },
-  { id: "propriete", label: "Propriété intellectuelle" },
-  { id: "marques", label: "Marques" },
+  { id: "hebergement", label: "Hébergement du site" },
+  { id: "distribution", label: "Distribution de l’app" },
   { id: "medical", label: "Avertissement médical" },
-  { id: "donnees", label: "Données personnelles" },
+  { id: "responsabilite", label: "Responsabilité" },
+  { id: "propriete", label: "Propriété intellectuelle" },
+  { id: "credits", label: "Crédits" },
   { id: "droit", label: "Droit applicable" },
 ];
 
@@ -24,75 +25,69 @@ export default function LegalNotice() {
   return (
     <LegalShell title="Mentions légales" toc={TOC}>
       <LegalSection id="editeur" title={title("editeur")}>
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-[auto_1fr]">
-          <dt className="font-semibold text-ink">Nom</dt>
-          <dd>
+        <address className="not-italic">
+          <span className="text-ink">
             <Field value={PUBLISHER.name} />
-          </dd>
-          {PUBLISHER.legalForm && (
-            <>
-              <dt className="font-semibold text-ink">Forme juridique</dt>
-              <dd>{PUBLISHER.legalForm}</dd>
-            </>
-          )}
-          {PUBLISHER.ide && (
-            <>
-              <dt className="font-semibold text-ink">Numéro IDE</dt>
-              <dd>{PUBLISHER.ide}</dd>
-            </>
-          )}
-          <dt className="font-semibold text-ink">Adresse</dt>
-          <dd>
-            <Field value={PUBLISHER.street} />
-            <br />
-            <Field value={PUBLISHER.postcodeCity} />
-            <br />
-            {PUBLISHER.country}
-          </dd>
-          <dt className="font-semibold text-ink">E-mail</dt>
-          <dd>
-            <A href={`mailto:${PUBLISHER.email}`}>{PUBLISHER.email}</A>
-          </dd>
-          <dt className="font-semibold text-ink">Responsable de la publication</dt>
-          <dd>
-            <Field value={PUBLISHER.name} />
-          </dd>
-        </dl>
+          </span>
+          <br />
+          <Field value={PUBLISHER.street} />
+          <br />
+          <Field value={PUBLISHER.postcodeCity} />
+          <br />
+          {PUBLISHER.country}
+          <br />
+          E-mail : <A href={`mailto:${PUBLISHER.email}`}>{PUBLISHER.email}</A>
+        </address>
+        <p>Symio est publiée par un particulier, sans inscription au registre du commerce.</p>
       </LegalSection>
 
       <LegalSection id="hebergement" title={title("hebergement")}>
         <p>
-          Ce site est hébergé par {HOST.name}, {HOST.address} (<A href={HOST.url}>{HOST.url.replace("https://", "")}</A>).
+          {HOST.name}
+          <br />
+          {HOST.address}
+          <br />
+          <A href={HOST.url}>{HOST.url.replace("https://www.", "")}</A>
+        </p>
+      </LegalSection>
+
+      <LegalSection id="distribution" title={title("distribution")}>
+        <p>
+          L’app Symio est distribuée par l’App Store d’Apple, selon les conditions d’Apple. Apple, le logo Apple, iPhone et App
+          Store sont des marques d’Apple Inc.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="medical" title={title("medical")}>
+        <p>
+          Symio est un journal personnel, pas un dispositif médical. Elle ne pose pas de diagnostic et ne remplace pas un avis
+          médical : parle toujours de ta santé avec ton médecin. En cas d’urgence, appelle le <strong>144</strong>.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="responsabilite" title={title("responsabilite")}>
+        <p>
+          Nous faisons de notre mieux pour que les informations de ce site soient exactes et à jour, sans pouvoir le garantir. Nous
+          ne sommes pas responsables du contenu des sites externes vers lesquels ce site renvoie.
         </p>
       </LegalSection>
 
       <LegalSection id="propriete" title={title("propriete")}>
         <p>
-          Les textes, images, captures d’écran et le logo de ce site et de l’app Symio sont protégés. Leur reproduction, totale ou
-          partielle, sans autorisation écrite de l’éditeur est interdite.
+          Les textes, le nom Symio, le logo et les visuels de ce site appartiennent à l’éditeur. Toute reproduction demande son
+          accord préalable.
         </p>
       </LegalSection>
 
-      <LegalSection id="marques" title={title("marques")}>
-        <p>Apple, le logo Apple, iPhone, Face ID, iCloud et App Store sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays.</p>
-      </LegalSection>
-
-      <LegalSection id="medical" title={title("medical")}>
-        <p>
-          Symio est un journal de santé personnel. L’app et ce site ne remplacent pas un avis médical ni ton médecin. En cas
-          d’urgence, appelle le <strong>144</strong> (Suisse) ou le numéro d’urgence de ton pays.
-        </p>
-      </LegalSection>
-
-      <LegalSection id="donnees" title={title("donnees")}>
-        <p>
-          Ce site ne dépose aucun cookie et n’utilise aucun outil de suivi. Pour savoir comment l’app traite tes données, lis la{" "}
-          <A href="/confidentialite">politique de confidentialité</A>.
-        </p>
+      <LegalSection id="credits" title={title("credits")}>
+        <p>Certaines photos de ce site ont été générées par intelligence artificielle.</p>
       </LegalSection>
 
       <LegalSection id="droit" title={title("droit")}>
-        <p>Ce site et ces mentions sont régis par le droit suisse.</p>
+        <p>
+          Le droit suisse s’applique. Le for est au domicile de l’éditeur, sous réserve des règles impératives qui protègent les
+          consommateurs.
+        </p>
       </LegalSection>
     </LegalShell>
   );

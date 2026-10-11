@@ -1,11 +1,8 @@
-// Adresse publique du site, utilisée pour les aperçus de partage (Open Graph).
-// Sur Vercel, l'adresse de production est détectée toute seule.
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://symio.ch");
+// Domaine du site : canonique, aperçus de partage, plan du site.
+export const SITE_URL = "https://symio.ch";
 
 // TODO: remplacer par le lien App Store définitif de Symio.
-export const APP_STORE_URL = "https://apps.apple.com/fr/app/symio";
+export const APP_STORE_URL = "https://apps.apple.com/ch/app/symio";
 
 // TODO: identifiant App Store (les chiffres après « id » dans le lien de l'app).
 // Une fois rempli, la Smart App Banner s'affiche sur iPhone.
@@ -18,12 +15,10 @@ export const CTA_LABEL = "Télécharger dans l’App Store";
 // (toolbox.marketingtools.apple.com) en gardant le même nom de fichier.
 export const APP_STORE_BADGE = "/badges/app-store-badge.svg";
 
-// Éditeur du site et de l'app (mentions légales et politique de confidentialité).
+// Éditeur (particulier, sans inscription au registre du commerce).
 // TODO: à compléter avant publication. Un champ vide affiche « À compléter ».
 export const PUBLISHER = {
-  name: "", // nom et prénom, ou raison sociale
-  legalForm: "", // ex. « Entreprise individuelle », « Sàrl », vide si particulier
-  ide: "", // numéro IDE (CHE-xxx.xxx.xxx), si inscrit au registre du commerce
+  name: "", // Prénom Nom
   street: "",
   postcodeCity: "",
   country: "Suisse",
@@ -32,23 +27,25 @@ export const PUBLISHER = {
 
 export const CONTACT_EMAIL = PUBLISHER.email;
 
-// Hébergeur du site. À adapter si le site n'est pas publié sur Vercel.
+// Hébergeur du site.
 export const HOST = {
-  name: "Vercel Inc.",
-  address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
-  url: "https://vercel.com",
+  name: "Infomaniak Network SA",
+  address: "Rue Eugène-Marziano 25, 1227 Les Acacias (GE), Suisse",
+  url: "https://www.infomaniak.com",
 };
 
-export const POLICY_UPDATED = "11 octobre 2026";
+// TODO: date de publication de la politique (ex. « 1er novembre 2026 »).
+export const POLICY_UPDATED = "";
 
-// Photos générées (Higgsfield). À télécharger dans /public/photos puis
-// remplacer ces URL par "/photos/<nom>.png".
+// Photos générées (Higgsfield), encore chargées depuis leur serveur.
+// TODO: les déposer dans public/photos/ (heroMatin.webp, consultation.webp, soir.webp)
+// et remplacer ces URL par "/photos/<nom>.webp" : le site ne contactera alors plus aucun serveur tiers.
 const HF = "https://d8j0ntlcm91z4.cloudfront.net/user_3K8jLjXEyN8j4ZQvmtlQvANtTWE";
 
 export const PHOTOS = {
-  heroMatin: `${HF}/hf_20261011_094552_f6382f8b-ac5c-45bf-b571-29dd692a38dd.png`,
-  consultation: `${HF}/hf_20261011_094644_976f93c9-affc-4ed3-9aaa-12742699592b.png`,
-  soir: `${HF}/hf_20261011_095035_3f8797b4-351b-493d-b000-d4a10dc70604.png`,
+  heroMatin: `${HF}/hf_20261011_094552_f6382f8b-ac5c-45bf-b571-29dd692a38dd_min.webp`,
+  consultation: `${HF}/hf_20261011_094644_976f93c9-affc-4ed3-9aaa-12742699592b_min.webp`,
+  soir: `${HF}/hf_20261011_095035_3f8797b4-351b-493d-b000-d4a10dc70604_min.webp`,
 } as const;
 
 export type ScreenName =

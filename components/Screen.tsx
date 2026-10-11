@@ -1,32 +1,37 @@
-import { getImageProps } from "next/image";
 import type { ScreenName } from "@/lib/site";
 
 type Props = {
   name: ScreenName;
   alt: string;
-  sizes: string;
+  sizes?: string;
   priority?: boolean;
-  // Show the opposite theme’s screenshot (used to show off dark mode on a light page and vice versa).
-  invert?: boolean;
   // Always show one theme, whatever the system setting.
   force?: "light" | "dark";
   className?: string;
 };
 
-// Real app screenshot that follows the system theme, like the app itself.
-export function Screen({ name, alt, sizes, priority, invert, force, className = "" }: Props) {
-  const common = { alt, width: 1179, height: 2556, sizes, priority };
-  if (force) {
-    const forced = getImageProps({ ...common, src: `/app-screens/${force}/${name}.png` }).props;
-    return <img {...forced} alt={alt} className={`block h-auto w-full ${className}`} />;
-  }
-  const light = getImageProps({ ...common, src: `/app-screens/light/${name}.png` }).props;
-  const dark = getImageProps({ ...common, src: `/app-screens/dark/${name}.png` }).props;
-  const [primary, alternate] = invert ? [dark, light] : [light, dark];
+// Real app screenshot (pre-compressed WebP, 720px wide) that follows the system theme, like the app itself.
+// Sources: design/app-screens/ (full-size PNGs).
+export function Screen({ name, alt, priority, force, className = "" }: Props) {
+  const src = (theme: "light" | "dark") => `/app-screens/${theme}/${name}.webp`;
+  const img = (
+    // eslint-disable-next-line @next/next/no-img-element -- static export, images are pre-compressed
+    <img
+      src={src(force ?? "light")}
+      alt={alt}
+      width={720}
+      height={1561}
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
+      decoding="async"
+      className={`block h-auto w-full ${className}`}
+    />
+  );
+  if (force) return img;
   return (
     <picture className="block">
-      <source media="(prefers-color-scheme: dark)" srcSet={alternate.srcSet} sizes={sizes} />
-      <img {...primary} alt={alt} className={`block h-auto w-full ${className}`} />
+      <source media="(prefers-color-scheme: dark)" srcSet={src("dark")} />
+      {img}
     </picture>
   );
 }

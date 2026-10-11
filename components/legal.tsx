@@ -13,7 +13,7 @@ export function LegalShell({
   children,
 }: {
   title: string;
-  updated?: string;
+  updated?: string | null;
   toc: TocItem[];
   children: ReactNode;
 }) {
@@ -23,7 +23,11 @@ export function LegalShell({
       <main className="mx-auto max-w-7xl px-4 pb-28 pt-14 sm:px-6 md:pt-20">
         <header className="max-w-3xl">
           <h1 className="text-4xl font-semibold leading-[1.05] tracking-[-0.035em] md:text-6xl">{title}</h1>
-          {updated && <p className="mt-5 text-[17px] text-muted">Dernière mise à jour : {updated}</p>}
+          {updated !== undefined && (
+            <p className="mt-5 text-[17px] text-muted">
+              Dernière mise à jour : <Field value={updated ?? ""} />
+            </p>
+          )}
         </header>
 
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
@@ -82,4 +86,8 @@ export function A({ href, children }: { href: string; children: ReactNode }) {
 export function Field({ value }: { value: string }) {
   if (value) return <>{value}</>;
   return <span className="rounded-md bg-accent-soft px-1.5 py-0.5 text-[15px] font-medium text-accent">À compléter</span>;
+}
+
+export function H3({ children }: { children: ReactNode }) {
+  return <h3 className="pt-3 text-lg font-semibold tracking-[-0.01em] text-ink">{children}</h3>;
 }

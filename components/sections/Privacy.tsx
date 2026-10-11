@@ -18,7 +18,7 @@ export function Privacy() {
             Tes données restent sur ton iPhone.
           </h2>
           <a
-            href="/confidentialite"
+            href="/confidentialite/"
             className="mt-8 inline-block text-[17px] text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent"
           >
             Lire la politique de confidentialité

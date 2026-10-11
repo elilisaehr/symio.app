@@ -2,8 +2,8 @@ import { CONTACT_EMAIL } from "@/lib/site";
 
 const LINKS = [
   { href: `mailto:${CONTACT_EMAIL}`, label: CONTACT_EMAIL },
-  { href: "/mentions-legales", label: "Mentions légales" },
-  { href: "/confidentialite", label: "Politique de confidentialité" },
+  { href: "/mentions-legales/", label: "Mentions légales" },
+  { href: "/confidentialite/", label: "Politique de confidentialité" },
 ];
 
 export function Footer() {
