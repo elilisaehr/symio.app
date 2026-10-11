@@ -11,6 +11,25 @@ npm run dev        # http://localhost:3000
 
 ## Publier sur Infomaniak
 
+### Depuis GitHub
+
+L'envoi chez Infomaniak est prêt (`.github/workflows/deploy-infomaniak.yml`), en mode manuel tant que
+l'hébergeur n'est pas confirmé : GitHub → onglet Actions → « Deploy to Infomaniak » → Run workflow.
+Pour l'envoyer à chaque modification de `main`, voir le commentaire en tête du fichier.
+
+Une seule fois, ajouter ces secrets dans GitHub → Settings → Secrets and variables → Actions :
+
+| Secret | Où le trouver dans le Manager Infomaniak |
+| --- | --- |
+| `INFOMANIAK_SFTP_HOST` | Hébergement Web → FTP / SSH : nom du serveur (ex. `xxxx.ftp.infomaniak.com`) |
+| `INFOMANIAK_SFTP_USER` | même page : utilisateur FTP/SSH |
+| `INFOMANIAK_SFTP_PASSWORD` | mot de passe de cet utilisateur |
+| `INFOMANIAK_SFTP_PATH` | dossier du site symio.ch sur le serveur (ex. `/sites/symio.ch`) |
+
+L'envoi remplace le contenu de ce dossier par le site : ne pas y ranger d'autres fichiers.
+
+### À la main
+
 ```bash
 npm run build      # écrit tout le site dans out/
 ```
