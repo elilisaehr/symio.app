@@ -9,7 +9,6 @@ import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Nav } from "@/components/sections/Nav";
 import { Privacy } from "@/components/sections/Privacy";
-import { Stories } from "@/components/sections/Stories";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
         <Features />
         <BeforeAfter />
         <Doctor />
-        <Stories />
         <Privacy />
         <Faq />
         <FinalCta />
