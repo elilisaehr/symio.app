@@ -1,11 +1,37 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/outfit";
 import "./globals.css";
+import { APP_STORE_ID, SITE_URL } from "@/lib/site";
+
+const description =
+  "L’app iPhone gratuite pour suivre tes symptômes, ton humeur et tes traitements, et préparer un résumé pour ton médecin. Sans compte : tout reste sur ton iPhone.";
 
 export const metadata: Metadata = {
-  title: "Symio, le suivi de symptômes pour les maladies chroniques",
-  description:
-    "Symio, l’app iPhone gratuite qui suit tes symptômes, ton humeur et tes traitements, puis prépare un résumé pour ton médecin.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Symio, le suivi de symptômes pour les maladies chroniques",
+    template: "%s, Symio",
+  },
+  description,
+  applicationName: "Symio",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "fr_CH",
+    siteName: "Symio",
+    title: "Symio, note ta journée en un tap",
+    description,
+    url: "/",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Symio, l’app iPhone de suivi des symptômes" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Symio, note ta journée en un tap",
+    description,
+    images: ["/og.png"],
+  },
+  // Smart App Banner on iPhone, once the App Store ID is known (lib/site.ts).
+  ...(APP_STORE_ID ? { itunes: { appId: APP_STORE_ID } } : {}),
 };
 
 export const viewport: Viewport = {

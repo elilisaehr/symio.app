@@ -38,9 +38,9 @@ export function MoodPicker() {
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 className={`block size-12 rounded-full sm:size-[72px] ${active ? "ring-4 ring-accent/40 ring-offset-4 ring-offset-surface" : ""}`}
               >
-                <Image src={`/moods/${i + 1}.png`} alt="" width={144} height={144} className="size-full" />
+                <Image src={`/moods/${i + 1}.png`} alt={label} width={144} height={144} className="size-full" />
               </motion.span>
-              <span className={`whitespace-nowrap text-[13px] transition-colors sm:text-[15px] ${active ? "font-semibold text-ink" : "text-muted"}`}>{label}</span>
+              <span aria-hidden="true" className={`whitespace-nowrap text-[13px] transition-colors sm:text-[15px] ${active ? "font-semibold text-ink" : "text-muted"}`}>{label}</span>
             </button>
           );
         })}

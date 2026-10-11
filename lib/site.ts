@@ -1,12 +1,45 @@
+// Adresse publique du site, utilisée pour les aperçus de partage (Open Graph).
+// Sur Vercel, l'adresse de production est détectée toute seule.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://symio.ch");
+
 // TODO: remplacer par le lien App Store définitif de Symio.
 export const APP_STORE_URL = "https://apps.apple.com/fr/app/symio";
 
-export const CONTACT_EMAIL = "support@symio.ch";
+// TODO: identifiant App Store (les chiffres après « id » dans le lien de l'app).
+// Une fois rempli, la Smart App Banner s'affiche sur iPhone.
+export const APP_STORE_ID = "";
 
-// TODO: adresse postale (rue, NPA, ville). Laissée vide dans la politique Termly ("__________").
-export const POSTAL_ADDRESS = "";
+// Texte officiel du badge Apple en français, aussi utilisé comme texte alternatif.
+export const CTA_LABEL = "Télécharger dans l’App Store";
 
-export const CTA_LABEL = "Télécharger sur l’App Store";
+// Badge officiel Apple, noir. À remplacer par la version française
+// (toolbox.marketingtools.apple.com) en gardant le même nom de fichier.
+export const APP_STORE_BADGE = "/badges/app-store-badge.svg";
+
+// Éditeur du site et de l'app (mentions légales et politique de confidentialité).
+// TODO: à compléter avant publication. Un champ vide affiche « À compléter ».
+export const PUBLISHER = {
+  name: "", // nom et prénom, ou raison sociale
+  legalForm: "", // ex. « Entreprise individuelle », « Sàrl », vide si particulier
+  ide: "", // numéro IDE (CHE-xxx.xxx.xxx), si inscrit au registre du commerce
+  street: "",
+  postcodeCity: "",
+  country: "Suisse",
+  email: "support@symio.ch",
+};
+
+export const CONTACT_EMAIL = PUBLISHER.email;
+
+// Hébergeur du site. À adapter si le site n'est pas publié sur Vercel.
+export const HOST = {
+  name: "Vercel Inc.",
+  address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+  url: "https://vercel.com",
+};
+
+export const POLICY_UPDATED = "11 octobre 2026";
 
 // Photos générées (Higgsfield). À télécharger dans /public/photos puis
 // remplacer ces URL par "/photos/<nom>.png".

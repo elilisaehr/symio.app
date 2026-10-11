@@ -22,7 +22,7 @@ export function Nav() {
             </li>
           ))}
         </ul>
-        <AppStoreButton size="sm" className="hidden sm:inline-flex" />
+        <AppStoreButton size="sm" />
       </nav>
     </header>
   );

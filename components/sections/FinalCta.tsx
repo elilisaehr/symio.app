@@ -9,7 +9,7 @@ export function FinalCta() {
       <Reveal>
         <div className="overflow-hidden rounded-[var(--radius-card)] bg-accent-soft px-6 pt-20 text-center md:pt-28">
           <h2 className="mx-auto text-4xl font-semibold leading-[1.06] tracking-[-0.03em] md:text-6xl">
-            <span className="block">Commence ce soir.</span>
+            <span className="block">Commence ce soir.</span>{" "}
             <span className="block">Un tap suffit.</span>
           </h2>
           <AppStoreButton className="mt-10" />
