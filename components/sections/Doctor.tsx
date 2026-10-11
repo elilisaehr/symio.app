@@ -18,7 +18,7 @@ export function Doctor() {
         </Reveal>
         <Reveal
           delay={0.1}
-          className="relative z-[1] -mt-16 mx-3 md:absolute md:bottom-10 md:left-10 md:mx-0 md:mt-0 md:w-[440px]"
+          className="relative z-[1] -mt-16 mx-3 md:absolute md:bottom-10 md:right-10 md:mx-0 md:mt-0 md:w-[440px]"
         >
           <div className="rounded-[var(--radius-card)] bg-surface p-8 shadow-soft md:p-10">
             <h2 className="text-3xl font-semibold leading-[1.08] tracking-[-0.03em] md:text-[2.5rem]">
@@ -29,7 +29,7 @@ export function Doctor() {
             </p>
           </div>
         </Reveal>
-        <Reveal delay={0.18} y={40} className="absolute -top-10 right-6 hidden w-[210px] lg:block xl:right-14 xl:w-[240px]">
+        <Reveal delay={0.18} y={40} className="absolute -top-10 left-6 hidden w-[210px] lg:block xl:left-14 xl:w-[240px]">
           <Phone
             name="06-resume-medecin"
             alt="Écran Résumé pour ton médecin : aperçu du PDF des symptômes de la semaine."

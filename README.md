@@ -27,7 +27,7 @@ Tout ce qui est propre au site est dans `lib/site.ts` :
 - `PUBLISHER` : nom et adresse de l'éditeur (pages légales) ;
 - `POLICY_UPDATED` : date de la politique de confidentialité ;
 - `APP_STORE_URL` et `APP_STORE_ID` : lien de l'app et Smart App Banner ;
-- `PHOTOS` : photos du site (à déposer dans `public/photos/`).
+- `PHOTOS` : photos du site (dans `public/photos/`).
 
 Le badge App Store est `public/badges/app-store-badge.svg` (badge officiel Apple).
 L'image de partage `public/og.png` se régénère depuis `scripts/og.html`.

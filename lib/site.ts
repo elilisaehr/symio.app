@@ -37,15 +37,11 @@ export const HOST = {
 // TODO: date de publication de la politique (ex. « 1er novembre 2026 »).
 export const POLICY_UPDATED = "";
 
-// Photos générées (Higgsfield), encore chargées depuis leur serveur.
-// TODO: les déposer dans public/photos/ (heroMatin.webp, consultation.webp, soir.webp)
-// et remplacer ces URL par "/photos/<nom>.webp" : le site ne contactera alors plus aucun serveur tiers.
-const HF = "https://d8j0ntlcm91z4.cloudfront.net/user_3K8jLjXEyN8j4ZQvmtlQvANtTWE";
-
+// Photos générées par IA (crédit dans les mentions légales), hébergées sur le site.
 export const PHOTOS = {
-  heroMatin: `${HF}/hf_20261011_094552_f6382f8b-ac5c-45bf-b571-29dd692a38dd_min.webp`,
-  consultation: `${HF}/hf_20261011_094644_976f93c9-affc-4ed3-9aaa-12742699592b_min.webp`,
-  soir: `${HF}/hf_20261011_095035_3f8797b4-351b-493d-b000-d4a10dc70604_min.webp`,
+  heroMatin: "/photos/hero-matin.webp",
+  consultation: "/photos/consultation.webp",
+  soir: "/photos/soir.webp",
 } as const;
 
 export type ScreenName =
