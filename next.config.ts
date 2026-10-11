@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
-// Static export for Infomaniak: `npm run build` writes the whole site to out/,
-// to upload as-is to the web root. No Node server is needed.
+// Hosted on Vercel (domain symio.ch registered at Infomaniak, DNS pointing to Vercel).
 const nextConfig: NextConfig = {
-  output: "export",
-  // Every page becomes a folder with an index.html (e.g. /confidentialite/), which any web server serves.
+  // Pages live at /confidentialite/, /mentions-legales/ (same addresses as the canonical URLs).
   trailingSlash: true,
-  // No image server on static hosting: images are pre-compressed in public/.
+  // Images are pre-compressed WebP in public/, served as-is.
   images: { unoptimized: true },
+  // symio.ch/privacy is the address cited in the app.
+  async redirects() {
+    return [{ source: "/privacy", destination: "/confidentialite/", permanent: true }];
+  },
 };
 
 export default nextConfig;

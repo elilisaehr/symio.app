@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { A, Field, LegalSection, LegalShell } from "@/components/legal";
-import { HOST, PUBLISHER } from "@/lib/site";
+import { HOST, PUBLISHER, REGISTRAR } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -47,8 +47,9 @@ export default function LegalNotice() {
           <br />
           {HOST.address}
           <br />
-          <A href={HOST.url}>{HOST.url.replace("https://www.", "")}</A>
+          <A href={HOST.url}>{HOST.url.replace("https://", "")}</A>
         </p>
+        <p>Le nom de domaine symio.ch est enregistré chez {REGISTRAR}.</p>
       </LegalSection>
 
       <LegalSection id="distribution" title={title("distribution")}>

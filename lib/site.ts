@@ -27,12 +27,15 @@ export const PUBLISHER = {
 
 export const CONTACT_EMAIL = PUBLISHER.email;
 
-// Hébergeur du site.
+// Hébergeur du site. Le nom de domaine symio.ch est enregistré chez Infomaniak.
 export const HOST = {
-  name: "Infomaniak Network SA",
-  address: "Rue Eugène-Marziano 25, 1227 Les Acacias (GE), Suisse",
-  url: "https://www.infomaniak.com",
+  name: "Vercel Inc.",
+  address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+  url: "https://vercel.com",
+  privacyUrl: "https://vercel.com/legal/privacy-policy",
 };
+
+export const REGISTRAR = "Infomaniak Network SA, Genève, Suisse";
 
 // TODO: date de publication de la politique (ex. « 1er novembre 2026 »).
 export const POLICY_UPDATED = "";

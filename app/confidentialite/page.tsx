@@ -118,9 +118,10 @@ export default function PrivacyPolicy() {
 
       <LegalSection id="site" title={title("site")}>
         <p>
-          Le site est hébergé par {HOST.name}, en Suisse. À chaque visite, l’hébergeur enregistre automatiquement des informations
-          techniques : adresse IP, type de navigateur, page consultée, date et heure. Elles servent à afficher le site et à le
-          protéger contre les abus, et sont conservées peu de temps. Elles sont traitées en Suisse.
+          Le site est hébergé par {HOST.name}, aux États-Unis. À chaque visite, l’hébergeur enregistre automatiquement des
+          informations techniques : adresse IP, type de navigateur, page consultée, date et heure. Elles servent à afficher le
+          site et à le protéger contre les abus, et sont conservées peu de temps. Elles peuvent être traitées aux États-Unis, selon
+          la politique de confidentialité de Vercel (<A href={HOST.privacyUrl}>vercel.com/legal/privacy-policy</A>).
         </p>
         <p>Le site n’utilise ni cookies, ni outil de mesure d’audience, ni publicité.</p>
       </LegalSection>
