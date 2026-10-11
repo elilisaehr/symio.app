@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/*
+  Theme: auto (prefers-color-scheme), locked page-wide. Sections never invert.
+  Accent: Symio indigo, one accent for the whole page.
+  Mood faces are the app's own artwork (cropped from the real check-in screen).
+  Radius rule: interactive = full pill, containers = 28px, device frames = 48px.
+*/
+:root {
+  --bg: #f3f3f8;
+  --surface: #fcfcfe;
+  --surface-2: #e9e9f4;
+  --ink: #17162b;
+  --muted: #57566f;
+  --line: rgb(23 22 43 / 0.08);
+  --accent: #5352d8;
+  --accent-ink: #fcfcfe;
+  --accent-soft: #e4e4fb;
+  --shadow: 240 40% 30%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11111b;
+    --surface: #1a1a27;
+    --surface-2: #242436;
+    --ink: #eeeef8;
+    --muted: #a8a7c2;
+    --line: rgb(238 238 248 / 0.08);
+    --accent: #a6a6ff;
+    --accent-ink: #17162b;
+    --accent-soft: #26264d;
+    --shadow: 240 60% 3%;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 28px;
+  --radius-device: 48px;
+}
+
+html {
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.shadow-soft {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.04) inset,
+    0 24px 60px -24px hsl(var(--shadow) / 0.28),
+    0 8px 20px -12px hsl(var(--shadow) / 0.18);
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Hero entrance: runs without JS, transform only, so nothing is hidden at first paint. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-enter {
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+}
+
+@keyframes hero-rise {
+  from { transform: translate3d(0, var(--y, 20px), 0); }
+  to { transform: none; }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
