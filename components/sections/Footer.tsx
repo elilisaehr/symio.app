@@ -1,6 +1,7 @@
 import { CONTACT_EMAIL } from "@/lib/site";
 
 const LINKS = [
+  { href: "/contact/", label: "Contact" },
   { href: `mailto:${CONTACT_EMAIL}`, label: CONTACT_EMAIL },
   { href: "/mentions-legales/", label: "Mentions légales" },
   { href: "/confidentialite/", label: "Politique de confidentialité" },
