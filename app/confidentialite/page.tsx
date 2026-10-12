@@ -37,8 +37,7 @@ export default function PrivacyPolicy() {
 
       <LegalSection id="responsable" title={title("responsable")}>
         <p>
-          Symio est publiée par <Field value={PUBLISHER.name} />, <Field value={PUBLISHER.street} />,{" "}
-          <Field value={PUBLISHER.postcodeCity} />, {PUBLISHER.country} (« nous »). Pour toute question sur tes données, écris à{" "}
+          Symio est publiée par Elisabeth Saehr, {PUBLISHER.country} (« nous »). Pour toute question sur tes données, écris à{" "}
           <Mail />.
         </p>
         <p>
