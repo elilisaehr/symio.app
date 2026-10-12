@@ -27,12 +27,10 @@ export default function LegalNotice() {
       <LegalSection id="editeur" title={title("editeur")}>
         <address className="not-italic">
           <span className="text-ink">
-            <Field value={PUBLISHER.name} />
+            Elisabeth Saehr
           </span>
-          <br />
-          <Field value={PUBLISHER.street} />
-          <br />
-          <Field value={PUBLISHER.postcodeCity} />
+    
+        
           <br />
           {PUBLISHER.country}
           <br />
