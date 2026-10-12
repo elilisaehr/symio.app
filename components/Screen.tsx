@@ -44,7 +44,7 @@ export function Phone({ className = "", ...screen }: FrameProps) {
     <div
       className={`shadow-soft rounded-[var(--radius-device)] bg-[#0e0e16] p-[7px] ring-1 ring-black/10 dark:ring-white/10 ${className}`}
     >
-      <div className="overflow-hidden rounded-[41px] bg-surface">
+      <div className="overflow-hidden rounded-[24px] bg-surface">
         <Screen {...screen} />
       </div>
     </div>

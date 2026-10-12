@@ -4,7 +4,7 @@
   Theme: auto (prefers-color-scheme), locked page-wide. Sections never invert.
   Accent: Symio indigo, one accent for the whole page.
   Mood faces are the app's own artwork (cropped from the real check-in screen).
-  Radius rule: interactive = full pill, containers = 28px, device frames = 48px.
+  Radius rule: interactive = full pill, containers = 28px, device frames = 30px.
 */
 :root {
   --bg: #f3f3f8;
@@ -46,7 +46,7 @@
   --color-accent-soft: var(--accent-soft);
   --font-sans: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
   --radius-card: 28px;
-  --radius-device: 48px;
+  --radius-device: 30px;
 }
 
 html {
