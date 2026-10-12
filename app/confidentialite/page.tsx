@@ -96,8 +96,8 @@ export default function PrivacyPolicy() {
 
         <H3>Sauvegardes</H3>
         <p>
-          Si la sauvegarde iCloud ou la sauvegarde sur ordinateur de ton iPhone est activée, les données de Symio y sont incluses,
-          comme celles de tes autres apps. Ces sauvegardes sont gérées par Apple et par toi, selon tes réglages.
+          Les données de santé enregistrées dans Symio sont stockées localement sur ton appareil et ne sont pas incluses dans les sauvegardes iCloud. Tu peux toutefois exporter manuellement tes données au format JSON afin de les conserver et de les réimporter dans l’application, notamment lors d’un changement de téléphone. Tu es responsable de la conservation et de la sécurité du fichier exporté.
+      
         </p>
 
         <H3>Informations transmises par Apple</H3>
