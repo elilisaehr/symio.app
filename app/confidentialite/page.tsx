@@ -52,8 +52,8 @@ export default function PrivacyPolicy() {
         <List>
           <li>tes check-ins : comment tu te sens, tes symptômes et leur intensité, les zones de douleur, ton sommeil, tes notes ;</li>
           <li>tes traitements : nom, dose, fréquence, dates de début et d’arrêt, raison de l’arrêt ;</li>
-          <li>ton équipe soignante (nom, spécialité et numéro de téléphone de tes médecins) ;</li>
-          <li>tes rendez-vous (date, heure, motif, tes questions, ta préparation et tes rappels) ;</li>
+          <li>ton équipe soignante : nom, spécialité et numéro de téléphone de tes médecins ;</li>
+          <li>tes rendez-vous : date, heure, motif, tes questions, ta préparation et tes rappels ;</li>
           <li>les maladies que tu as choisies, si tu l’as fait ;</li>
           <li>ton prénom, si tu l’as indiqué ;</li>
           <li>tes réglages : heure du rappel, verrouillage, apparence.</li>
