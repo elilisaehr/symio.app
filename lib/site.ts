@@ -38,7 +38,7 @@ export const HOST = {
 export const REGISTRAR = "Infomaniak Network SA, Genève, Suisse";
 
 // Date de la dernière mise à jour de la politique de confidentialité.
-export const POLICY_UPDATED = "12 octobre 2026";
+export const POLICY_UPDATED = "14 octobre 2026";
 
 // Photos générées par IA (crédit dans les mentions légales), hébergées sur le site.
 export const PHOTOS = {
