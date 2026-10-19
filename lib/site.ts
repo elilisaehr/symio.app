@@ -1,12 +1,12 @@
 // Domaine du site : canonique, aperçus de partage, plan du site.
 export const SITE_URL = "https://symio.ch";
 
-// TODO: remplacer par le lien App Store définitif de Symio.
-export const APP_STORE_URL = "https://apps.apple.com/ch/app/symio";
+// Lien App Store de Symio.
+export const APP_STORE_URL = "https://apps.apple.com/app/symio/id6821971660";
 
-// TODO: identifiant App Store (les chiffres après « id » dans le lien de l'app).
-// Une fois rempli, la Smart App Banner s'affiche sur iPhone.
-export const APP_STORE_ID = "";
+// Identifiant App Store (les chiffres après « id » dans le lien de l'app).
+// Affiche la Smart App Banner sur iPhone.
+export const APP_STORE_ID = "6821971660";
 
 // Texte officiel du badge Apple en français, aussi utilisé comme texte alternatif.
 export const CTA_LABEL = "Télécharger dans l’App Store";
