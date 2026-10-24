@@ -60,7 +60,7 @@ export default function LegalNotice() {
       <LegalSection id="medical" title={title("medical")}>
         <p>
           Symio est un journal personnel, pas un dispositif médical. Elle ne pose pas de diagnostic et ne remplace pas un avis
-          médical : parle toujours de ta santé avec ton médecin. En cas d’urgence, appelle le <strong>144</strong>.
+          médical : parle toujours de ta santé avec ton médecin. En cas d’urgence, appelle immédiatement les secours.
         </p>
       </LegalSection>
 

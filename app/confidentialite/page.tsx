@@ -4,7 +4,7 @@ import { HOST, POLICY_UPDATED, PUBLISHER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Tes données de santé restent sur ton iPhone. Ce que Symio enregistre, ce qu’elle ne fait pas, et tes droits.",
+  description: "Tes données de santé restent sur ton téléphone. Ce que Symio enregistre, ce qu’elle ne fait pas, et tes droits.",
   alternates: { canonical: "/confidentialite/" },
 };
 
@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
       <section id="en-bref" className="scroll-mt-28 rounded-[var(--radius-card)] bg-accent-soft p-7 md:p-9">
         <h2 className="text-2xl font-semibold tracking-[-0.02em] text-ink md:text-[28px]">{title("en-bref")}</h2>
         <p className="mt-4 text-[18px] leading-relaxed text-ink">
-          Symio est un journal de symptômes pour iPhone. Tes données de santé restent sur ton téléphone. Symio n’a pas de serveur
+          Symio est un journal de symptômes pour iPhone et Android. Tes données de santé restent sur ton téléphone. Symio n’a pas de serveur
           pour les recevoir : personne, pas même nous, ne peut les consulter.
         </p>
       </section>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
 
       <LegalSection id="app" title={title("app")}>
         <H3>Ce que l’app enregistre</H3>
-        <p>Ces données sont enregistrées sur ton iPhone uniquement, et chiffrées :</p>
+        <p>Ces données sont enregistrées sur ton téléphone uniquement, et chiffrées :</p>
         <List>
           <li>tes check-ins : comment tu te sens, tes symptômes et leur intensité, les zones de douleur, ton sommeil, tes notes ;</li>
           <li>tes traitements : nom, dose, fréquence, dates de début et d’arrêt, raison de l’arrêt ;</li>
@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
         </List>
         <p>
           <strong>Symio ne te demande ni compte, ni adresse e-mail, ni numéro de téléphone.</strong> Elle n’accède ni à Apple Santé,
-          ni à tes contacts, ni à ta position, ni à tes photos, ni à ton micro.
+          ni à Health Connect, ni à tes contacts, ni à ta position, ni à tes photos, ni à ton micro.
         </p>
 
         <H3>Ce que l’app ne fait pas</H3>
@@ -75,10 +75,12 @@ export default function PrivacyPolicy() {
             <strong>Notifications :</strong> les rappels sont programmés directement sur ton téléphone. Aucun serveur n’intervient.
           </li>
           <li>
-            <strong>Face ID :</strong> Symio le demande seulement si tu actives le verrouillage. C’est iOS qui reconnaît ton visage.
-            Symio reçoit seulement la réponse « réussi » ou « échoué », jamais ton visage.
+            <strong>Face ID, Touch ID ou déverrouillage biométrique :</strong> Symio le demande seulement si tu actives le
+            verrouillage. C’est ton téléphone (iOS ou Android) qui reconnaît ton visage ou ton empreinte. Symio reçoit seulement la
+            réponse « réussi » ou « échoué », jamais ton visage ni ton empreinte.
           </li>
         </List>
+        <p>Sur Android, Symio cache ton journal dans les apps récentes et bloque les captures d’écran dans l’app.</p>
 
         <H3>Quand des données quittent ton téléphone</H3>
         <p>Cela n’arrive que si tu le demandes :</p>
@@ -87,11 +89,15 @@ export default function PrivacyPolicy() {
             <strong>Résumé pour ton médecin :</strong> un PDF de tes symptômes, de ton humeur et de tes traitements ;
           </li>
           <li>
-            <strong>Export :</strong> un fichier tableur (CSV) de tes check-ins.
+            <strong>Export :</strong> un fichier tableur (CSV) de tes check-ins ;
+          </li>
+          <li>
+            <strong>Sauvegarde :</strong> un fichier (JSON) de tout ton journal, à réimporter dans Symio, par exemple sur un nouveau
+            téléphone.
           </li>
         </List>
         <p>
-          Ces fichiers ne sont pas chiffrés. Tu choisis à qui les envoyer avec le menu de partage de l’iPhone. Symio efface sa copie
+          Ces fichiers ne sont pas chiffrés. Tu choisis à qui les envoyer avec le menu de partage de ton téléphone. Symio efface sa copie
           temporaire juste après. Une fois partagés, ces fichiers ne sont plus sous la protection de Symio. Range-les dans un
           endroit sûr.
         </p>
@@ -99,21 +105,29 @@ export default function PrivacyPolicy() {
         <H3>Sauvegardes</H3>
         <p>
           Les données de santé enregistrées dans Symio sont stockées localement sur ton appareil et ne sont pas incluses dans les sauvegardes iCloud. Tu peux toutefois exporter manuellement tes données au format JSON afin de les conserver et de les réimporter dans l’application, notamment lors d’un changement de téléphone. Tu es responsable de la conservation et de la sécurité du fichier exporté.
-      
+        </p>
+        <p>
+          Sur Android, tes données de santé ne sont jamais envoyées sur Google Drive. Elles ne font partie d’aucune sauvegarde de
+          ton téléphone, ni sur ton compte Google ni sur un ordinateur, et la clé qui les protège ne quitte jamais ton téléphone.
         </p>
 
-        <H3>Informations transmises par Apple</H3>
+        <H3>Informations transmises par Apple ou Google</H3>
         <p>
           Si tu as accepté, dans les réglages de ton iPhone, de partager les données d’analyse avec les développeurs, Apple nous
           transmet des rapports de plantage anonymes et des statistiques globales, par exemple le nombre d’installations. Ils ne
           contiennent aucune donnée de santé.
         </p>
+        <p>
+          Sur Android : si tu as accepté de partager les statistiques d’utilisation et les rapports de plantage avec Google dans
+          les paramètres de ton téléphone, Google nous transmet des rapports de plantage anonymes et des statistiques globales, par
+          exemple le nombre d’installations. Ils ne contiennent aucune donnée de santé.
+        </p>
 
         <H3>Durée de conservation et suppression</H3>
         <p>
           Tes données restent sur ton téléphone jusqu’à ce que tu les supprimes, dans{" "}
-          <strong>Profil → Supprimer toutes mes données</strong>. Supprimer l’app efface aussi ses données, sauf celles contenues
-          dans tes sauvegardes.
+          <strong>Profil → Supprimer toutes mes données</strong>. Supprimer l’app efface aussi ses données, sauf les fichiers que
+          tu as exportés.
         </p>
       </LegalSection>
 
@@ -155,8 +169,7 @@ export default function PrivacyPolicy() {
 
       <LegalSection id="avertissement" title={title("avertissement")}>
         <p>
-          Symio ne remplace pas un avis médical. En cas d’urgence, appelle le <strong>144</strong> (Suisse) ou le numéro d’urgence
-          de ton pays.
+          Symio ne remplace pas un avis médical. En cas d’urgence, appelle immédiatement les secours.
         </p>
       </LegalSection>
 
