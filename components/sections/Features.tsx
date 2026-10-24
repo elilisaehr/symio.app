@@ -64,7 +64,7 @@ export function Features() {
         <Reveal className="lg:col-span-12">
           <article className="grid grid-cols-1 items-center gap-12 rounded-[var(--radius-card)] bg-accent px-8 py-12 text-accent-ink md:grid-cols-12 md:px-12 md:py-16">
             <div className="md:col-span-5">
-              <h3 className="text-3xl font-semibold tracking-[-0.025em] md:text-4xl">Clair ou sombre, comme ton iPhone.</h3>
+              <h3 className="text-3xl font-semibold tracking-[-0.025em] md:text-4xl">Clair ou sombre, comme ton téléphone.</h3>
               <p className="mt-4 max-w-[36ch] text-[17px] leading-relaxed opacity-85">
                 Symio suit le réglage de ton téléphone, pour rester doux à regarder, même tard le soir.
               </p>

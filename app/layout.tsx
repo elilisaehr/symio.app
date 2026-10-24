@@ -4,7 +4,7 @@ import "./globals.css";
 import { APP_STORE_ID, SITE_URL } from "@/lib/site";
 
 const description =
-  "L’app iPhone gratuite pour suivre tes symptômes, ton humeur et tes traitements, et préparer un résumé pour ton médecin. Sans compte : tout reste sur ton iPhone.";
+  "L’app gratuite, sur iPhone et Android, pour suivre tes symptômes, ton humeur et tes traitements, et préparer un résumé pour ton médecin. Sans compte : tout reste sur ton téléphone.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Symio, note ta journée en un tap",
     description,
     url: "/",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Symio, l’app iPhone de suivi des symptômes" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Symio, l’app de suivi des symptômes" }],
   },
   twitter: {
     card: "summary_large_image",

@@ -3,10 +3,10 @@ import { Reveal } from "@/components/Reveal";
 
 const QUESTIONS = [
   { q: "Symio est-elle vraiment gratuite ?", a: "Oui. Symio est gratuite sur l’App Store." },
-  { q: "Faut-il créer un compte ?", a: "Non. Symio fonctionne sans compte, et tes données sont enregistrées seulement sur ton iPhone." },
+  { q: "Faut-il créer un compte ?", a: "Non. Symio fonctionne sans compte, et tes données sont enregistrées seulement sur ton téléphone." },
   { q: "Quelles maladies puis-je suivre ?", a: "Celle que tu veux. Tu choisis ta maladie et tes symptômes dans ton profil, ou tu suis simplement tes symptômes." },
   { q: "Symio remplace-t-elle mon médecin ?", a: "Non. Symio ne remplace pas un avis médical. Elle t’aide à garder une trace et à préparer tes rendez-vous." },
-  { q: "Sur quels appareils ?", a: "Symio est disponible sur iPhone." },
+  { q: "Sur quels appareils ?", a: "Symio est disponible sur iPhone et Android." },
 ];
 
 // Layout family: stacked accordion (native details, keyboard accessible).
