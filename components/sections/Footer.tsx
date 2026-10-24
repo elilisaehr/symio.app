@@ -15,7 +15,7 @@ export function Footer() {
           <a href="/" className="text-xl font-semibold tracking-[-0.04em] text-ink">
             Symio
           </a>
-          <p>Symio ne remplace pas un avis médical. En cas d’urgence, appelle le 144.</p>
+          <p>Symio ne remplace pas un avis médical. En cas d’urgence, appelle immédiatement les secours.</p>
         </div>
         <nav aria-label="Liens légaux et contact">
           <ul className="flex flex-col gap-3 md:items-end">

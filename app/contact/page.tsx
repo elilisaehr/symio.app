@@ -64,8 +64,8 @@ export default function Contact() {
             message uniquement pour te répondre (voir la <a href="/confidentialite/#ecrire" className="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent">politique de confidentialité</a>).
           </p>
           <p>
-            <strong className="font-semibold text-ink">Symio ne remplace pas un avis médical.</strong> En cas d’urgence, appelle le
-            144 (Suisse) ou le numéro d’urgence de ton pays.
+            <strong className="font-semibold text-ink">Symio ne remplace pas un avis médical.</strong> En cas d’urgence, appelle
+            immédiatement les secours.
           </p>
         </div>
       </main>
