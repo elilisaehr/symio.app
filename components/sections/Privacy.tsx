@@ -3,8 +3,8 @@ import { Reveal } from "@/components/Reveal";
 
 const FACTS = [
   { Icon: UserCircleDashed, title: "Sans compte", body: "Tu ouvres l’app et tu commences." },
-  { Icon: DeviceMobile, title: "Sur ton iPhone", body: "Tes données sont enregistrées seulement sur ton téléphone." },
-  { Icon: ScanSmiley, title: "Face ID", body: "Verrouille l’app si tu le souhaites." },
+  { Icon: DeviceMobile, title: "Sur ton téléphone", body: "Tes données sont enregistrées seulement sur ton téléphone." },
+  { Icon: ScanSmiley, title: "Face ID ou empreinte", body: "Verrouille l’app si tu le souhaites." },
   { Icon: PaperPlaneTilt, title: "Ton choix", body: "Tu décides à qui envoyer ton résumé." },
 ];
 
@@ -15,7 +15,7 @@ export function Privacy() {
       <div className="grid grid-cols-1 gap-14 border-t border-line pt-20 md:pt-28 lg:grid-cols-12 lg:gap-10">
         <Reveal className="lg:col-span-6">
           <h2 className="max-w-[14ch] text-4xl font-semibold leading-[1.06] tracking-[-0.03em] md:text-[3.25rem]">
-            Tes données restent sur ton iPhone.
+            Tes données restent sur ton téléphone.
           </h2>
           <a
             href="/confidentialite/"
